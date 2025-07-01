@@ -3,8 +3,8 @@ import React from 'react'
 const page = ({params}) => {
     const {slug}= params;
 
-    console.log(slog)
-  return (
+    console.log(slug)
+  return(
     <div>{slug}</div>
   )
 }

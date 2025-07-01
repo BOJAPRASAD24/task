@@ -4,12 +4,12 @@ import React from 'react'
 
 const page = () => {
     return (
-      <div className='m-6'>
-        <h1 className='text-xl font-semibold'>About us </h1>
+        <div className='m-6'>
+            <h1 className='text-xl font-semibold'>About us</h1>
 
-        <link href={'/'}><House/></link>
-      </div>
+            <Link href={'/'}><House></House></Link>
+        </div>
     )
 }
 
-export default page
+    export default page
