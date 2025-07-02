@@ -1,11 +1,12 @@
 "use client";
+import useCounterStore from "@/store/useCounterStore";
 import Link from "next/link";
 import { useState } from "react";
 
-const Header = ({username})=>{
+const Header = ()=>{
 
-    const [isLoggedIn, setIsLoggedIn] = useState;
-    (false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const {count} = useCounterStore()
 
     const navItems = [
         {href:'/', label:'Home'},
@@ -15,9 +16,9 @@ const Header = ({username})=>{
 
     return(
        <div className='flex justify-between'>
-        <h1>Logo</h1>
+        <h1>Logo {count} </h1>
 
-<ul className="flex justify-between">
+<ul className="flex gap-4">
     {
         navItems.map((item, index)=>(
             <li key={index}>
@@ -29,14 +30,10 @@ const Header = ({username})=>{
     }
 </ul>
 
-    isLoggedIn ? <button className='bg-red-500 text-white px-4 py-2 rounded' onClick={()=>{
-        setIsLoggedIn(istLoggedIn)
-    }} >Logout</button> : <button className="bg-green-500 text-white px-4 p-2 rounded" onClick={()=>{
-        setIsLoggedIn(isLoggedIn)
-    }} >Login</button>   
+     <button onClick={decreases} className='bg-red-500 text-white px-4 py-2 rounded-2xl' >+</button>
     
        </div>
+    
     )
 }
-
 export default Header;

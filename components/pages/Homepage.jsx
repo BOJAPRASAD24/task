@@ -1,57 +1,25 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import Header from '../common/Header';
+import useCounterStore from '@/store/useCounterStore';
 
 const Homepage = () => {
     const name = "bob";
 
-    // let count = 0;
-    const[count,setCount] = useState(0);
-    const[count11, setCount1] = useState(10);
-
-    const handleIncreamnt= () =>{
-        setCount(count+1);
-
-    }
-
-    const handleIncreamnt1 =() => {
-        setCount(count+10);
-
-    }
-
-
-    // useEffect(() => {
-    //     console.log("Render!")
-    // })
-
-    // useEffect(()=>{
-    //     console.log("Render!");
-    // },[]);
-
-    // useEffect(()=>{
-    //     console.log("Render!");
-    // },[count1]);
+ const{count, increase} = useCounterStore();
 
     return (
         <div className='m-4'>
-            <Header usename={name}/>
+            <Header/>
             <div className='m-8'>
 
               <h1 className='text-4xl font-semibold'>
                  {count}
                  </h1>
 
-            <button onClick={handleIncreamnt}className='bg-blue-500 text-white py-2 px-4 rounded'>+</button>
+            <button onClick={increase} className='bg-blue-500 text-white py-2 px-4 rounded-2xl'>+</button>
         </div>
 
-        <div className='m-8'>
-
-        <h1 className='text-4xl font-semibold'>
-            {count1}
-        </h1>
-
-        <button onClick={handleIncreamnt1}className='bg-green-500 text-white py-2 px-4 rounded'>+</button>
-        </div>
        </div>
     )
 }
