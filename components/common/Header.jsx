@@ -2,6 +2,7 @@
 import useCounterStore from "@/store/useCounterStore";
 import Link from "next/link";
 import { useState } from "react";
+import { signInWithGoogle } from "../../firebase";
 
 const Header = ()=>{
 
@@ -16,7 +17,7 @@ const Header = ()=>{
 
     return(
        <div className='flex justify-between'>
-        <h1>Logo {count} </h1>
+        <h1>Logo</h1>
 
 <ul className="flex gap-4">
     {
@@ -30,7 +31,7 @@ const Header = ()=>{
     }
 </ul>
 
-     <button onClick={decreases} className='bg-red-500 text-white px-4 py-2 rounded-2xl' >+</button>
+     <button className='border px-4 py-2 rounded cursor-pointer' onClick={signInWithGoogle}>sign in with Google</button>
     
        </div>
     
