@@ -1,11 +1,9 @@
-import Header from "@/components/ common/Header";
-import Homepage from "@/components/pages/Homepage";
-
+import Hero from "@/Components/bookreview/Hero";
 
 export default function Home() {
   return (
     <div>
-      <Homepage />
+      <Hero />
     </div>
   );
 }
